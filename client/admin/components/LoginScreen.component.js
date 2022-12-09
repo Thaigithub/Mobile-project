@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import CorneredButton from "./CorneredButton";
+import InputCombo from "./InputCombo.component";
 
 /*
 TODO: Change all inputs to InputCombo

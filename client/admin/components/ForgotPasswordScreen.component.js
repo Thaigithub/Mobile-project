@@ -1,24 +1,20 @@
 import * as React from "react"
 import { View, Text, StyleSheet, TextInput, TouchableOpacity } from "react-native"
+import ClickableText from "./ClickableText.component";
 import CorneredButton from "./CorneredButton";
+import InputCombo from "./InputCombo.component";
 
 export default function ForgotPasswordScreen({ navigation }) {
     const [email, setEmail] = React.useState("")
     return (
         <View style={styles.container}>
-            <View>
-                <View style={styles.input}>
-                    <Text style={styles.inputTitle}>Nhập email:</Text>
-                    <TextInput
-                        style={styles.inputBox}
-                        onChangeText={setEmail}
-                        value={email}
-                    />
-                </View>
+            <View style={{ width: "25%" }}>
+                <InputCombo title="Nhập email:" handleValueChange={setEmail} />
                 <CorneredButton text="Lấy lại mật khẩu" color="#0040DD" />
-                <TouchableOpacity onPress={() => navigation.navigate("Login")}>
-                    <Text style={{ textAlign: "center", color: "#409CFF" }}>Đăng nhập</Text>
-                </TouchableOpacity>
+                <View style={{ alignItems: "center" }}>
+                    <ClickableText title="Đăng nhập" onPress={() => navigation.navigate("Login")} />
+                </View>
+
             </View>
         </View>);
 }
