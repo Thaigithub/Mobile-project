@@ -2,6 +2,10 @@ import * as React from "react";
 import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
 import CorneredButton from "./CorneredButton";
 
+/*
+TODO: Change all inputs to InputCombo
+*/
+
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState();
@@ -33,7 +37,7 @@ export default function LoginScreen({ navigation }) {
         </View>
         <Text><br></br></Text>
         <CorneredButton text="Đăng nhập" color="#0040DD" />
-        <CorneredButton text="Đăng ký" color="#0A84FF" />
+        <CorneredButton text="Đăng ký" color="#0A84FF" onPress={() => navigation.navigate("Signup")} />
       </View>
     </View>
   );
