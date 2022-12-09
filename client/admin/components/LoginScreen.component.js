@@ -1,13 +1,13 @@
 import * as React from "react";
-import { Text, View, StyleSheet, TextInput, Button } from "react-native";
-import SplashScreen from "./SplashScreen.component";
+import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import CorneredButton from "./CorneredButton";
 
-export default function LoginScreen() {
+export default function LoginScreen({ navigation }) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState();
   return (
     <View style={styles.container}>
-      <View style={styles.text}>
+      <View>
         <Text style={styles.loginText}>ĐĂNG NHẬP</Text>
         <View style={styles.input}>
           <Text style={styles.inputTitle}>Tên đăng nhập</Text>
@@ -21,16 +21,19 @@ export default function LoginScreen() {
           <Text style={styles.inputTitle}>Mật khẩu</Text>
           <TextInput
             style={styles.inputBox}
+            secureTextEntry={true}
             onChangeText={setPassword}
             value={password}
           />
         </View>
-        <View style={styles.button}>
-          <Button onPress={undefined} title="Đăng nhập" color="#0040DD" />
+        <View>
+          <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
+            <Text style={{ textAlign: "right", color: "#FFFFFF" }}>Quên mật khẩu ?</Text>
+          </TouchableOpacity>
         </View>
-        <View style={styles.button}>
-          <Button onPress={undefined} title="Đăng ký" color="#0A84FF" />
-        </View>
+        <Text><br></br></Text>
+        <CorneredButton text="Đăng nhập" color="#0040DD" />
+        <CorneredButton text="Đăng ký" color="#0A84FF" />
       </View>
     </View>
   );
@@ -43,7 +46,6 @@ const styles = StyleSheet.create({
     alignItems: "center",
     justifyContent: "center",
   },
-  text: {},
   loginText: {
     fontStyle: "normal",
     fontWeight: "bold",
@@ -56,6 +58,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
     backgroundColor: "grey",
+    borderRadius: 5
   },
   inputTitle: {
     fontStyle: "normal",
@@ -64,7 +67,10 @@ const styles = StyleSheet.create({
     color: "#FFFFFF",
     padding: 5,
   },
-  button: {
-    padding: 5,
+  buttonContainer: {
+    padding: 5
   },
+  input: {
+    padding: 5
+  }
 });
