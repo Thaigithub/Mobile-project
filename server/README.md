@@ -19,7 +19,7 @@ $ npm run start:prod
 ```
 ## Api local
 ### register user
-http://localhost:3000/user/registerUser\\
+http://localhost:3000/user/registerUser
 ```
 example body:
 {
@@ -33,7 +33,7 @@ example body:
 }
 ```
 ### login
-http://localhost:3000/auth/login\\
+http://localhost:3000/auth/login
 ```
 example body:
 {
