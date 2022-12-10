@@ -19,7 +19,8 @@ $ npm run start:prod
 ```
 ## Api local
 ### register user
-http://localhost:3000/user/registerUser
+http://localhost:3000/user/registerUser\\
+```
 example body:
 {
   "username": "thienle",
@@ -30,15 +31,16 @@ example body:
   "address": "HCM",
   "role": "customer"
 }
-
+```
 ### login
-http://localhost:3000/auth/login
+http://localhost:3000/auth/login\\
+```
 example body:
 {
   "username": "thienle",
   "password": "1234"
 }
-
+```
 ### get user
 http://localhost:3000/user/<username>
 
