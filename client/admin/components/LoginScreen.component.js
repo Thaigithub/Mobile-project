@@ -37,7 +37,7 @@ export default function LoginScreen({ navigation }) {
           </TouchableOpacity>
         </View>
         <Text><br></br></Text>
-        <CorneredButton text="Đăng nhập" color="#0040DD" />
+        <CorneredButton text="Đăng nhập" color="#0040DD" onPress={() => navigation.navigate("Home")} />
         <CorneredButton text="Đăng ký" color="#0A84FF" onPress={() => navigation.navigate("Signup")} />
       </View>
     </View>
