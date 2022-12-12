@@ -16,6 +16,7 @@ export default function Block(props) {
 const styles = StyleSheet.create({
     container: {
         padding: 10,
+        width: "45%",
     },
     image: {
         width: 94,
@@ -27,6 +28,8 @@ const styles = StyleSheet.create({
         borderColor: "#409CFF",
         alignItems: "center",
         justifyContent: "center",
-        borderWidth: 5
+        borderWidth: 5,
+        backgroundColor: "#FFFFFF",
+        textAlign: "center"
     },
 });

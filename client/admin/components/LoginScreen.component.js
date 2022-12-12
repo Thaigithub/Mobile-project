@@ -3,10 +3,6 @@ import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-nativ
 import CorneredButton from "./CorneredButton";
 import InputCombo from "./InputCombo.component";
 
-/*
-TODO: Change all inputs to InputCombo
-*/
-
 export default function LoginScreen({ navigation }) {
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState();
