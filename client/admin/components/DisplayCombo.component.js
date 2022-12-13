@@ -5,7 +5,7 @@ export default function InputCombo(props) {
     return (
         <View style={styles.input}>
             <Text style={styles.inputTitle}>{props.title}</Text>
-            <TextInput style={styles.inputBox} onChangeText={(value) => props.handleValueChange(value)} secureTextEntry={props.isPassword} />
+            <Text style={styles.inputBox}>{props.value}</Text>
         </View>
     );
 }
@@ -16,7 +16,7 @@ const styles = StyleSheet.create({
         borderWidth: 1,
         padding: 5,
         backgroundColor: "grey",
-        borderRadius: 5
+        borderRadius: 5,
     },
     inputTitle: {
         fontStyle: "normal",
@@ -25,6 +25,7 @@ const styles = StyleSheet.create({
         padding: 5,
     },
     input: {
-        padding: 5
+        padding: 5,
+        width: "35%"
     }
 });

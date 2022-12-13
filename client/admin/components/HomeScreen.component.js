@@ -6,40 +6,48 @@ export default function HomeScreen({ navigation }) {
     const DATA = [
         {
             text: "Danh sách chờ",
-            src: "rent_list"
+            src: "rent_list",
+            action: "NewRoom"
         },
         {
             text: "Chỉ số điện nước",
-            src: "water"
+            src: "water",
+            action: "Water"
         },
         {
             text: "Yêu cầu trả phòng",
-            src: "rent_list"
+            src: "return_list",
+            action: "ReturnRoom"
         },
         {
             text: "Thông báo người thuê",
-            src: "bell"
+            src: "bell",
+            action: "Notification"
         },
         {
             text: "Yêu cầu sửa chữa",
-            src: "repair"
+            src: "repair",
+            action: "RepairRequest"
         },
         {
             text: "Yêu cầu dịch vụ",
-            src: "comm"
+            src: "comm",
+            action: "ServiceRequest"
         },
         {
             text: "Hóa đơn",
-            src: "receipt"
+            src: "receipt",
+            action: "ReceiptList"
         },
         {
             text: "Danh sách dịch vụ",
-            src: "service"
+            src: "service",
+            action: "ServiceList"
         }
     ];
     const _renderItem = ({ item }) => {
         return (
-            <Block text={item.text} src={item.src} />
+            <Block text={item.text} src={item.src} onPress={() => navigation.navigate(item.action)} />
         );
     };
     return (
