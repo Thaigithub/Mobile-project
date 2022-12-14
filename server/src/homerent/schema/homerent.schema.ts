@@ -3,6 +3,8 @@ import { Document, Schema, SchemaTypes } from 'mongoose';
 export const HomeRentSchema = new Schema({
   name: { type: String },
   imageUrl: { type: String },
+  ownerId: { type: String },
+  renterId: { type: String },
   price: { type: Number },
   rating: { type: Number },
   status: { type: String },

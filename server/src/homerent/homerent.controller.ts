@@ -7,8 +7,10 @@ import {
   Body,
   Param,
 } from '@nestjs/common';
+import { HomeReceiptService } from './homereceipt.service';
 import { HomerentService } from './homerent.service';
 import { HomeRequestService } from './homeRequest.service';
+import { HomeReceipt, IHomeReceipt } from './schema/homereceipt.schema';
 import { HomeRent, IHomeRent } from './schema/homerent.schema';
 import { HomeRequest, IHomeRequest } from './schema/homeRequest.schema';
 
@@ -17,6 +19,7 @@ export class HomerentController {
   constructor(
     private readonly homerentService: HomerentService,
     private readonly homeRequestService: HomeRequestService,
+    private readonly homeReceiptService: HomeReceiptService,
   ) {}
 
   @Get()
@@ -65,5 +68,29 @@ export class HomerentController {
     @Param('action') action: string,
   ): Promise<HomeRequest> {
     return this.homeRequestService.updateHomeRequest(id, action);
+  }
+
+  @Get('homereceipt/renter/:id')
+  async getHomeReceiptByRenterId(
+    @Param('id') id: string,
+  ): Promise<HomeReceipt[]> {
+    return this.homeReceiptService.getHomeReceiptsByRenterId(id);
+  }
+
+  @Get('homereceipt/homeId/:id')
+  async getHomeReceiptById(@Param('id') id: string): Promise<HomeReceipt[]> {
+    return this.homeReceiptService.getHomeReceiptsById(id);
+  }
+
+  @Get('homereceipt/owner/:id')
+  async getHomeReceiptByOwnerId(
+    @Param('id') id: string,
+  ): Promise<HomeReceipt[]> {
+    return this.homeReceiptService.getHomeReceiptsByOwnerId(id);
+  }
+
+  @Post('homerequest')
+  async saveHomeReceipt(@Body() data: IHomeReceipt): Promise<HomeReceipt> {
+    return this.homeReceiptService.saveHomeReceipt(data);
   }
 }
