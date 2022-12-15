@@ -1,5 +1,11 @@
 import * as React from "react";
-import { Text, View, StyleSheet, TextInput, TouchableOpacity } from "react-native";
+import {
+  Text,
+  View,
+  StyleSheet,
+  TextInput,
+  TouchableOpacity,
+} from "react-native";
 import CorneredButton from "./CorneredButton";
 import InputCombo from "./InputCombo.component";
 
@@ -29,12 +35,22 @@ export default function LoginScreen({ navigation }) {
         </View>
         <View>
           <TouchableOpacity onPress={() => navigation.navigate("Forgot")}>
-            <Text style={{ textAlign: "right", color: "#FFFFFF" }}>Quên mật khẩu ?</Text>
+            <Text style={{ textAlign: "right", color: "#FFFFFF" }}>
+              Quên mật khẩu ?
+            </Text>
           </TouchableOpacity>
         </View>
-        <Text><br></br></Text>
-        <CorneredButton text="Đăng nhập" color="#0040DD" onPress={() => navigation.navigate("Home")} />
-        <CorneredButton text="Đăng ký" color="#0A84FF" onPress={() => navigation.navigate("Signup")} />
+        <Text>{"\n"}</Text>
+        <CorneredButton
+          text="Đăng nhập"
+          color="#0040DD"
+          onPress={() => navigation.navigate("Home")}
+        />
+        <CorneredButton
+          text="Đăng ký"
+          color="#0A84FF"
+          onPress={() => navigation.navigate("Signup")}
+        />
       </View>
     </View>
   );
@@ -59,7 +75,7 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     padding: 5,
     backgroundColor: "grey",
-    borderRadius: 5
+    borderRadius: 5,
   },
   inputTitle: {
     fontStyle: "normal",
@@ -69,9 +85,9 @@ const styles = StyleSheet.create({
     padding: 5,
   },
   buttonContainer: {
-    padding: 5
+    padding: 5,
   },
   input: {
-    padding: 5
-  }
+    padding: 5,
+  },
 });
