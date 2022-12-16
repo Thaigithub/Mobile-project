@@ -26,7 +26,7 @@ export default function TopNavStack() {
         headerTitleAlign: "center",
         headerTintColor: "#fff",
         headerTitleStyle: {
-          fontSize: 30,
+          fontSize: 20,
         },
       }}
       initialRouteName="Login"

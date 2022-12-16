@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
   },
   table: {
     textAlign: "center",
-    width: "50%",
+    width: "90%",
   },
   rows: {
     height: 38,

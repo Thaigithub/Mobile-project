@@ -3,7 +3,6 @@ import { Text, View, StyleSheet, Image, TouchableOpacity } from "react-native";
 import { IMAGES } from "./ImageListData.component";
 export default function Block(props) {
   // const img = require(`../assets/${props.src}.png`);
-  console.log(props.src);
   const img = IMAGES[props.src].uri;
   return (
     <View style={styles.container}>

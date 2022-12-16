@@ -15,7 +15,7 @@ export default function SignupScreen({ navigation }) {
   const [confirmPassword, setConfirmPassword] = React.useState("");
   return (
     <View style={styles.container}>
-      <View style={{ width: "25%" }}>
+      <View style={{ width: "80%" }}>
         <InputCombo title="Họ:" handleValueChange={setSurname} />
         <InputCombo title="Tên:" handleValueChange={setName} />
         <InputCombo title="CCCD/CMND:" handleValueChange={setId} />
@@ -49,5 +49,6 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: "center",
     justifyContent: "center",
+    width: "100%",
   },
 });
